@@ -1,0 +1,42 @@
+{
+  "name": "payload-v2-leixcal",
+  "description": "A blank template to get started with Payload",
+  "version": "1.0.0",
+  "main": "dist/server.js",
+  "private": "true",
+  "scripts": {
+    "dev": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts nodemon",
+    "build:payload": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload build",
+    "build:server": "tsc",
+    "build": "yarn copyfiles && yarn build:payload && yarn build:server",
+    "serve": "cross-env PAYLOAD_CONFIG_PATH=dist/payload.config.js NODE_ENV=production node dist/server.js",
+    "copyfiles": "copyfiles -u 1 \"src/**/*.{html,css,scss,ttf,woff,woff2,eot,svg,jpg,png}\" dist/",
+    "generate:types": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload generate:types",
+    "generate:graphQLSchema": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload generate:graphQLSchema",
+    "payload": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload"
+  },
+  "dependencies": {
+    "@adobe/react-spectrum": "^3.35.0",
+    "@lexical/table": "0.13.1",
+    "@payloadcms/bundler-webpack": "1.0.6",
+    "@payloadcms/db-mongodb": "1.5.1",
+    "@payloadcms/richtext-lexical": "0.10.0",
+    "@react-spectrum/color": "3.0.0-beta.33",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "payload": "2.16.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "20.12.11",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "copyfiles": "^2.4.1",
+    "mongodb-memory-server": "^9.2.0",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "packageManager": "pnpm@9.1.0"
+}

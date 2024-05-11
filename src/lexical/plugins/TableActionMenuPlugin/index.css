@@ -1,0 +1,278 @@
+/* ADD: Custom CSS */
+.lexical-background {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0 0 0 / 70%);
+  z-index: 21;
+
+	& > .dialog {
+		position: relative;
+		width: 28rem;
+		padding: 3rem 1.5rem 1.5rem;
+		background-color: var(--theme-elevation-200);
+		border-radius: 1rem;
+		overflow: hidden;
+		& > .body {
+			margin-bottom: .5rem;
+			display: flex;
+			flex-direction: column;
+			row-gap: 20px;
+			& > .button {
+				padding: 1rem .5rem;
+				border: 0;
+				border-radius: 1rem;
+				background-color: var(--theme-elevation-300);
+				color: var(--theme-elevation-750);
+
+				&:hover {
+					background-color: var(--theme-elevation-500);
+				}
+			}
+		}
+
+
+		& > .close {
+			display: inline-block;
+			padding: 1rem 3rem;
+			border: 0;
+			border-radius: 1rem;
+			background-color: var(--theme-error-500);
+			color: var(--theme-elevation-0);
+
+			&:hover {
+				background-color: var(--theme-error-700);
+			}
+		}
+	}
+}
+.lexical-background {
+  & .form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    & > .row {
+      display: flex;
+      align-items: center;
+      & > .label {
+        width: 30%;
+      }
+      & > .input {
+        width: 70%;
+        font-family: var(--font-body);
+        width: 100%;
+        border: 1px solid var(--theme-elevation-150);
+        background: var(--theme-input-bg);
+        color: var(--theme-elevation-800);
+        border-radius: 0;
+        font-size: 1rem;
+        height: 3.8461538462rem;
+        line-height: 1.9230769231rem;
+        padding: 0.9615384615rem 1.4423076923rem;
+        -webkit-appearance: none;
+        &:hover {
+          border-color: var(--theme-elevation-250);
+          box-shadow: 0 2px 3px 0 rgba(0, 2, 4, 0.13), 0 6px 4px -4px rgba(0, 2, 4, 0.1);
+        }
+      }
+    }
+    & .button {
+      padding: 0.4807692308rem 0.9615384615rem;
+      line-height: 1.9230769231rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      margin-top: 0;
+      margin-bottom: 0;
+      border: 0;
+      cursor: pointer;
+      font-weight: normal;
+      -webkit-text-decoration: none;
+      text-decoration: none;
+      text-align: center;
+      color: inherit;
+      background: var(--theme-elevation-750);
+      color: var(--theme-elevation-200);
+      &:first-child {
+        margin-left: auto;
+      }
+    }
+  }
+}
+/* END: Custom CSS */
+
+/**
+ * https://github.com/facebook/lexical/blob/main/packages/lexical-playground/src/index.css
+ */
+ .dropdown {
+  z-index: 100;
+  position: absolute;
+  box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  min-height: 40px;
+  background-color: #fff;
+}
+
+.item-input {
+  width: 50%;
+  color: #050505;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.item-button {
+  margin: 0 8px 0 8px;
+  padding: 8px;
+  color: #050505;
+  cursor: pointer;
+  line-height: 16px;
+  font-size: 15px;
+  display: flex;
+  align-content: center;
+  flex-direction: row;
+  flex-shrink: 0;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 0;
+}
+
+.dropdown .item {
+  margin: 0 8px 0 8px;
+  padding: 8px;
+  color: #050505;
+  cursor: pointer;
+  line-height: 16px;
+  font-size: 15px;
+  display: flex;
+  align-content: center;
+  flex-direction: row;
+  flex-shrink: 0;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 0;
+  max-width: 250px;
+  min-width: 100px;
+}
+
+.dropdown .item.fontsize-item,
+.dropdown .item.fontsize-item .text {
+  min-width: unset;
+}
+
+.dropdown .item .active {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+}
+
+.dropdown .item:first-child {
+  margin-top: 8px;
+}
+
+.dropdown .item:last-child {
+  margin-bottom: 8px;
+}
+
+.dropdown .item:hover {
+  background-color: #eee;
+}
+
+.dropdown .item .text {
+  display: flex;
+  line-height: 20px;
+  flex-grow: 1;
+  min-width: 150px;
+}
+
+.dropdown .item .icon {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  user-select: none;
+  margin-right: 12px;
+  line-height: 16px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.table-cell-action-button-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.table-cell-action-button {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  position: relative;
+  border-radius: 15px;
+  color: #222;
+  display: inline-block;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+i.chevron-down {
+  background-color: transparent;
+  background-size: contain;
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  background-image: url("data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='16'%20fill='currentColor'%20class='bi%20bi-chevron-down'%3e%3cpath%20fill-rule='evenodd'%20d='M1.646%204.646a.5.5%200%200%201%20.708%200L8%2010.293l5.646-5.647a.5.5%200%200%201%20.708.708l-6%206a.5.5%200%200%201-.708%200l-6-6a.5.5%200%200%201%200-.708z'/%3e%3c/svg%3e");
+}
+
+.action-button {
+  background-color: #fff;
+  border: 0;
+  padding: 8px 12px;
+  position: relative;
+  margin-left: 5px;
+  border-radius: 15px;
+  color: #222;
+  display: inline-block;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.action-button:hover {
+  background-color: #ddd;
+  color: #000;
+}
+
+.action-button-mic.active {
+  animation: mic-pulsate-color 3s infinite;
+}
+
+button.action-button:disabled {
+  opacity: 0.6;
+  background: #eee;
+  cursor: not-allowed;
+}
+
+@keyframes mic-pulsate-color {
+  0% {
+    background-color: #ffdcdc;
+  }
+
+  50% {
+    background-color: #ff8585;
+  }
+
+  100% {
+    background-color: #ffdcdc;
+  }
+}
