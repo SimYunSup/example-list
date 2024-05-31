@@ -287,21 +287,25 @@ function TableActionMenu({
       const dropDownElementRect = dropDownElement.getBoundingClientRect();
       const margin = 5;
       let leftPosition = menuButtonRect.right + margin;
-      if (
-        leftPosition + dropDownElementRect.width > window.innerWidth ||
-        leftPosition + dropDownElementRect.width > rootEleRect.right
-      ) {
-        const position =
-          menuButtonRect.left - dropDownElementRect.width - margin;
-        leftPosition = (position < 0 ? margin : position) + window.pageXOffset;
-      }
+      // ADD: Disable because window.pageXOffset is added twice
+      // if (
+      //   leftPosition + dropDownElementRect.width > window.innerWidth ||
+      //   leftPosition + dropDownElementRect.width > rootEleRect.right
+      // ) {
+      //   const position =
+      //     menuButtonRect.left - dropDownElementRect.width - margin;
+      //   leftPosition = (position < 0 ? margin : position) + window.pageXOffset;
+      // }
+      // END: Disable because window.pageXOffset is added twice
       dropDownElement.style.left = `${leftPosition + window.pageXOffset}px`;
 
       let topPosition = menuButtonRect.top;
-      if (topPosition + dropDownElementRect.height > window.innerHeight) {
-        const position = menuButtonRect.bottom - dropDownElementRect.height;
-        topPosition = (position < 0 ? margin : position) + window.pageYOffset;
-      }
+      // ADD: Disable because window.pageYOffset is added twice
+      // if (topPosition + dropDownElementRect.height > window.innerHeight) {
+      //   const position = menuButtonRect.bottom - dropDownElementRect.height;
+      //   topPosition = (position < 0 ? margin : position) + window.pageYOffset;
+      // }
+      // ADD: Disable because window.pageYOffset is added twice
       dropDownElement.style.top = `${topPosition + +window.pageYOffset}px`;
     }
   }, [contextRef, dropDownRef, editor]);
@@ -629,14 +633,14 @@ function TableActionMenu({
                       className="button"
                       onClick={onSubmit}
                     >
-                      {t("table:submit")}
+                      {t("submit")}
                     </button>
                     <button
                       type="button"
                       className="button"
                       onClick={props.close}
                     >
-                      {t("table:close")}
+                      {t("close")}
                     </button>
                   </div>
                 </div>
@@ -718,7 +722,7 @@ function TableActionMenu({
         data-test-id="table-delete-columns"
       >
         <span className="text">
-          {t("delete")} {t("column")}
+          {t('delete', { target: t('column') })}
         </span>
       </button>
       <button
@@ -728,7 +732,7 @@ function TableActionMenu({
         data-test-id="table-delete-rows"
       >
         <span className="text">
-          {t("delete")} {t("row")}
+          {t('delete', { target: t('row') })}
         </span>
       </button>
       <button
@@ -738,7 +742,7 @@ function TableActionMenu({
         data-test-id="table-delete"
       >
         <span className="text">
-          {t("delete")} {t("table")}
+          {t('delete', { target: t('table') })}
         </span>
       </button>
       <hr />
@@ -748,11 +752,10 @@ function TableActionMenu({
         onClick={withOnClose(() => toggleTableRowIsHeader())}
       >
         <span className="text">
-          {(tableCellNode.__headerState & TableCellHeaderStates.ROW) ===
-          TableCellHeaderStates.ROW
-            ? t("remove")
-            : t("add")}{" "}
-          {t("row")} {t("header")}
+          {(tableCellNode.__headerState & TableCellHeaderStates.ROW)
+          === TableCellHeaderStates.ROW
+            ? t('remove', { target: `${t('row')} ${t('header')}` })
+            : t('add', { target: `${t('row')} ${t('header')}` })}
         </span>
       </button>
       <button
@@ -762,11 +765,10 @@ function TableActionMenu({
         data-test-id="table-column-header"
       >
         <span className="text">
-          {(tableCellNode.__headerState & TableCellHeaderStates.ROW) ===
-          TableCellHeaderStates.ROW
-            ? t("remove")
-            : t("add")}{" "}
-          {t("column")} {t("header")}
+          {(tableCellNode.__headerState & TableCellHeaderStates.ROW)
+          === TableCellHeaderStates.ROW
+            ? t('remove', { target: `${t('column')} ${t('header')}` })
+            : t('add', { target: `${t('column')} ${t('header')}` })}
         </span>
       </button>
     </div>,
@@ -919,7 +921,7 @@ export const InsertTableModal = () => {
   const { setModal } = useModal();
   const columnRef = useRef<HTMLInputElement>(null);
   const rowRef = useRef<HTMLInputElement>(null);
-  const { t } = useTranslation();
+  const { t } = useTranslation("table");
   useEffect(() => {
     return mergeRegister(
       editor.registerCommand(
@@ -942,7 +944,7 @@ export const InsertTableModal = () => {
               <div className="form">
                 <div className="row">
                   <label className="label" htmlFor="table-column">
-                    {t("table:columns")}
+                    {t("columns")}
                   </label>
                   <input
                     id="table-column"
@@ -954,7 +956,7 @@ export const InsertTableModal = () => {
                 </div>
                 <div className="row">
                   <label className="label" htmlFor="table-row">
-                    {t("table:rows")}
+                    {t("rows")}
                   </label>
                   <input
                     id="table-row"
@@ -965,7 +967,7 @@ export const InsertTableModal = () => {
                   />
                 </div>
                 <button className="button" onClick={onSubmit}>
-                  {t("table:submit")}
+                  {t("submit")}
                 </button>
               </div>
             );

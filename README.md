@@ -15,9 +15,9 @@ This code was heavily inspired by [Lexical Playground](https://playground.lexica
 - `payload`: 2.16.1
   - `@payloadcms/bundler-webpack`: 1.0.6
   - `@payloadcms/db-mongodb`: 1.5.1
-  - `@payloadcms/richtext-lexical`: 0.10.0
-- `@adobe/react-spectrum`: 3.35.0
-  - `@react-spectrum/color`: 3.0.0-beta.33
+  - `@payloadcms/richtext-lexical`: 0.11.1
+- `@adobe/react-spectrum`: 3.35.1
+  - `@react-spectrum/color`: 3.0.0-beta.34
 - `@lexical/table`: 0.13.1
 - `typescript`: 5.4.5
 
@@ -30,3 +30,11 @@ I've marked the changes with `ADD` and `END` comments to indicate where they are
 
 > [!WARNING]
 > For now, due to rapid development, I'm not using the `floatingAnchor` feature in `@payloadcms/lexical` and have applied the dropdown, which is the logic I used in [Playground](https://playground.lexical.dev/). I'll change it to use the feature later if possible or develop a custom plugin.
+
+## ChangeLog
+
+- 2024-05-31
+  - Update package
+  - Delete unused plugin(`TableEditPlugin`)
+  - Add comment
+    - Disable because window.pageXOffset is added twice

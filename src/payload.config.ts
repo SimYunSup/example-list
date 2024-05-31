@@ -38,10 +38,10 @@ export default buildConfig({
           column: 'Column',
           rows: 'Rows',
           columns: 'Columns',
-          add: 'Add',
+          add: 'Add {{target}}',
           header: 'Header',
-          remove: 'Remove',
-          delete: 'Delete',
+          remove: 'Remove {{target}}',
+          delete: 'Delete {{target}}',
           table: 'Table',
           insertRight: 'Insert {{target}} Right',
           insertLeft: 'Insert {{target}} Left',
@@ -49,6 +49,8 @@ export default buildConfig({
           insertAbove: 'Insert {{target}} Above',
           mergeCell: 'Merge Cells',
           unmergeCell: 'Unmerge Cell',
+          submit: 'Submit',
+          close: 'Close',
         }
       }
     }
