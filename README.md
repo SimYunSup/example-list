@@ -21,22 +21,22 @@ The current major package versions for this example are below.
 
 1. Create a `Nested` collection item.
 2. Fill in the fields in one of the order listed below.
-  1. Block in Block
-    - Create `nested-block` in `blocks`
-    - Create `just-text` in `nested`
-    - Fill `title`(optional)
-  2. Array in Block
-    - Create `nested-array` in `blocks`
-    - Create item in `nested`
-    - Fill `title`(optional)
-  3. Block in Array
-    - Create item in `nestedArrayBlocks`
-    - Create `just-text` in `nested`
-    - Fill `title`(optional)
-  4. Block in Block
-    - Create item in `nestedArrayArray`
-    - Create item in `nested`
-    - Fill `title`(optional)
+    1. Block in Block
+        - Create `nested-block` in `blocks`
+        - Create `just-text` in `nested`
+        - Fill `title`(optional)
+    2. Array in Block
+        - Create `nested-array` in `blocks`
+        - Create item in `nested`
+        - Fill `title`(optional)
+    3. Block in Array
+        - Create item in `nestedArrayBlocks`
+        - Create `just-text` in `nested`
+        - Fill `title`(optional)
+    4. Block in Block
+        - Create item in `nestedArrayArray`
+        - Create item in `nested`
+        - Fill `title`(optional)
 3. Duplicates any top-level Block or Array.
 4. When you submit, you should get an error.
 
@@ -68,6 +68,8 @@ Reported Bug
 </details>
 
 I think It must replace nested ID.
+
+### Additional approach
 
 Same in `3.0.0-beta.39`, because `DUPLICATE_ROW` has same logic.
 
