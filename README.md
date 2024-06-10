@@ -12,8 +12,8 @@ This branch is an example of the lexical table plugin in `payload` v2.
 
 This code was heavily inspired by [Lexical Playground](https://playground.lexical.dev/). The current major package versions for this example are below.
 
-- `payload`: 2.16.1
-  - `@payloadcms/bundler-webpack`: 1.0.6
+- `payload`: 2.19.3
+  - `@payloadcms/bundler-webpack`: 1.0.7
   - `@payloadcms/db-mongodb`: 1.5.1
   - `@payloadcms/richtext-lexical`: 0.11.1
 - `@adobe/react-spectrum`: 3.35.1
@@ -38,3 +38,6 @@ I've marked the changes with `ADD` and `END` comments to indicate where they are
   - Delete unused plugin(`TableEditPlugin`)
   - Add comment
     - Disable because window.pageXOffset is added twice
+- 2024-06-10
+  - Update package
+  - Temporary fix for [facebook/lexical#5199](https://github.com/facebook/lexical/issues/5199)

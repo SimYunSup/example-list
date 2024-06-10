@@ -464,12 +464,27 @@ function TableActionMenu({
         throw new Error("Expected table row");
       }
 
+      // ADD: Fix Toggle Headerstate Error. See README.md on Changelog 2024-06-10
+      const hasRowState = tableCellNode.hasHeaderState(TableCellHeaderStates.ROW);
+      // END: Fix Toggle Headerstate Error. See README.md on Changelog 2024-06-10
       tableRow.getChildren().forEach((tableCell) => {
         if (!$isTableCellNode(tableCell)) {
           throw new Error("Expected table cell");
         }
 
-        tableCell.toggleHeaderStyle(TableCellHeaderStates.ROW);
+        // ADD: Fix Toggle Headerstate Error. See README.md on Changelog 2024-06-10
+        if (hasRowState) {
+          if (tableCell.hasHeaderState(TableCellHeaderStates.ROW)) {
+            tableCell.setHeaderStyles(tableCell.getHeaderStyles() - TableCellHeaderStates.COLUMN);
+          }
+        }
+        else {
+          if (!tableCell.hasHeaderState(TableCellHeaderStates.ROW)) {
+            console.log([TableCellHeaderStates.ROW, tableCell.getHeaderStyles()]);
+            tableCell.setHeaderStyles(tableCell.getHeaderStyles() + TableCellHeaderStates.ROW);
+          }
+        }
+        // END: Fix Toggle Headerstate Error. See README.md on Changelog 2024-06-10
       });
 
       clearTableSelection();
@@ -492,7 +507,9 @@ function TableActionMenu({
       if (tableColumnIndex >= maxRowsLength || tableColumnIndex < 0) {
         throw new Error("Expected table cell to be inside of table row.");
       }
-
+      // ADD: Fix Toggle Headerstate Error. See README.md on Changelog 2024-06-10
+      const hasColumnState = tableCellNode.hasHeaderState(TableCellHeaderStates.COLUMN);
+      // END: Fix Toggle Headerstate Error. See README.md on Changelog 2024-06-10
       for (let r = 0; r < tableRows.length; r++) {
         const tableRow = tableRows[r];
 
@@ -512,7 +529,19 @@ function TableActionMenu({
           throw new Error("Expected table cell");
         }
 
-        tableCell.toggleHeaderStyle(TableCellHeaderStates.COLUMN);
+        // ADD: Fix Toggle Headerstate Error. See README.md on Changelog 2024-06-10
+        if (hasColumnState) {
+          if (tableCell.hasHeaderState(TableCellHeaderStates.COLUMN)) {
+            tableCell.setHeaderStyles(tableCell.getHeaderStyles() - TableCellHeaderStates.COLUMN);
+          }
+        }
+        else {
+          if (!tableCell.hasHeaderState(TableCellHeaderStates.COLUMN)) {
+            console.log([TableCellHeaderStates.COLUMN, tableCell.getHeaderStyles()]);
+            tableCell.setHeaderStyles(tableCell.getHeaderStyles() + TableCellHeaderStates.COLUMN);
+          }
+        }
+        // END: Fix Toggle Headerstate Error. See README.md on Changelog 2024-06-10
       }
 
       clearTableSelection();
