@@ -4,11 +4,11 @@
 
 This branch is an reproduction of the `drizzle-kit`.
 
-`drizzle-kit` version is `0.22.6`.
+`drizzle-kit` version is `0.24.1`.
 
 <del>This bug is reported in [drizzle-team/drizzle-kit-mirror#458](https://github.com/drizzle-team/drizzle-kit-mirror/issues/458)</del>
 
-drizzle-kit-mirror is merged to [drizzle-team/drizzle-kit](https://github.com/drizzle-team/drizzle-orm).
+drizzle-kit-mirror is merged to [drizzle-team/drizzle-kit](https://github.com/drizzle-team/drizzle-orm). So the bug report was cleared. To create an issue, you can use this example.
 
 ### Reproduction Step
 
