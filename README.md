@@ -1,16 +1,14 @@
 # Example
 
-> [!NOTE]
-> This is a repository to demonstrate bug report issues and other simple examples on Github.
-
 ## Description
 
 This branch is an reproduction of the `drizzle-kit`.
 
 `drizzle-kit` version is `0.22.6`.
 
-This bug is reported in [drizzle-team/drizzle-kit-mirror#458](https://github.com/drizzle-team/drizzle-kit-mirror/issues/458)
+<del>This bug is reported in [drizzle-team/drizzle-kit-mirror#458](https://github.com/drizzle-team/drizzle-kit-mirror/issues/458)</del>
 
+drizzle-kit-mirror is merged to [drizzle-team/drizzle-kit](https://github.com/drizzle-team/drizzle-orm).
 
 ### Reproduction Step
 
@@ -32,3 +30,9 @@ So I think it must be like below.
 ```sql
 ALTER TABLE "tests" ALTER COLUMN "json" SET DATA TYPE jsonb USING to_jsonb("json");
 ```
+
+## ChangeLog
+
+- 2024-08-23
+  - Update `drizzle-kit` version.
+  - Update issue link.

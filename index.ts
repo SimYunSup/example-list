@@ -1,4 +1,4 @@
-import type { DrizzleSnapshotJSON } from 'drizzle-kit/payload'
+import type { DrizzleSnapshotJSON } from 'drizzle-kit/api'
 
 import process from 'node:process';
 import { createRequire } from 'node:module';
@@ -18,7 +18,7 @@ globalThis.__filename = url.fileURLToPath(import.meta.url);
 globalThis.__dirname = path.dirname(__filename);
 
 // If not dynamic import, Shim is not applied
-const { generateDrizzleJson, generateMigration } = await import('drizzle-kit/payload');
+const { generateDrizzleJson, generateMigration } = await import('drizzle-kit/api');
 
 const test = pgTable(
   'tests',
