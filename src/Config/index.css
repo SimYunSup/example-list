@@ -1,0 +1,8 @@
+/* Add application styles & imports to this file! */
+@import '~/jquery-ui-pack/jquery-ui.css';
+@import '~/jquery-ui-pack/jquery-ui.structure.css';
+@import '~/jquery-ui-pack/jquery-ui.theme.css';
+@import '~/pqgrid/pqgrid.min.css';
+@import '~/pqgrid/pqgrid.ui.min.css';
+@import '~/pqgrid/themes/steelblue/pqgrid.css';
+@import '~/pqgrid/pq-icons/pq.css'; /* optional; since version 9.0.0 */

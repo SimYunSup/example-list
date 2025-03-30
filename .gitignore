@@ -171,3 +171,10 @@ dist
 # Ignore all local history of files
 .history
 .ionide
+
+## dotnet ##
+
+obj/
+bin/
+**/*.r.css
+**/*.razor.js
